@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using QueueTopicHelper.Enums;
-using QueueTopicHelper.Factory;
 using QueueTopicHelper.Sender.InternalServices;
 using System.Threading.Tasks;
 
