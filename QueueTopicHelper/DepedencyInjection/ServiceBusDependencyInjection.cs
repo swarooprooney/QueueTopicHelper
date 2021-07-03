@@ -26,5 +26,11 @@ namespace QueueTopicHelper.DependencyInjection
             services.AddSingleton<IServiceBusTopicReceiver>(r => new ServiceBusTopicReceiver(connectionString, topicName, subscriptionName));
             return services;
         }
+
+        public static IServiceCollection RegisterRecieverForStorageQueue(this IServiceCollection services, string connectionString, string queueName)
+        {
+            services.AddSingleton<IStorageQueueReceiver>(r => new StorageQueueReceiver(connectionString, queueName));
+            return services;
+        }
     }
 }

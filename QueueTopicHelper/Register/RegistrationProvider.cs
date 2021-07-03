@@ -16,6 +16,9 @@ namespace QueueTopicHelper.Register
                 case QueueOrTopicType.ServiceBusTopic:
                     services.AddSingleton<ISender>(s => new ServiceBusTopicService(connectionString, queueName));
                     break;
+                case QueueOrTopicType.StorageQueue:
+                    services.AddSingleton<ISender>(s => new StorageQueueService(connectionString,queueName));
+                    break;
                 default:
                     services.AddSingleton<ISender>(s => new ServiceBusQueueService(connectionString, queueName));
                     break;

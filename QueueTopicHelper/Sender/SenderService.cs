@@ -14,7 +14,7 @@ namespace QueueTopicHelper.Sender
             _serviceCollection = serviceCollection;
         }
 
-        public async Task SendMessageAsync<T>(T message, QueueOrTopicType type)
+        public async Task SendMessageAsync<T>(T message)
         {
             await _serviceCollection.BuildServiceProvider().GetRequiredService<ISender>().SendMessageAsync(message);
         }

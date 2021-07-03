@@ -5,6 +5,6 @@ namespace QueueTopicHelper.Sender
 {
     public interface ISenderService
     {
-        Task SendMessageAsync<T>(T message, QueueOrTopicType type);
+        Task SendMessageAsync<T>(T message);
     }
 }
